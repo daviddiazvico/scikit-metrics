@@ -12,7 +12,7 @@ def relative_mean_absolute_error(y_true, y_pred, sample_weight=None):
     """ Relative mean absolute error
 
         Calculates the relative mean absolute error:
-        100 * |y_true - y_pred| / |y_true|.
+        100 * abs(y_true - y_pred) / abs(y_true).
 
         Parameters
         ----------
