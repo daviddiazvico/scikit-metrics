@@ -1,6 +1,5 @@
 name: scikit-metrics
 channels:
 - defaults
-- conda-forge
 dependencies:
 - scikit-learn>=0.19.1

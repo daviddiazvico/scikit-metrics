@@ -2,11 +2,9 @@
 Scikit-learn-compatible metrics
 
 ## Status
-[![Build Status](https://travis-ci.org/daviddiazvico/scikit-metrics.svg?branch=master)](https://travis-ci.org/daviddiazvico/scikit-metrics)
-[![Coverage Status](https://coveralls.io/repos/github/daviddiazvico/scikit-metrics/badge.svg?branch=master)](https://coveralls.io/github/daviddiazvico/scikit-metrics?branch=master)
+[![Build Status](https://travis-ci.com/daviddiazvico/scikit-metrics.svg?branch=master)](https://travis-ci.com/daviddiazvico/scikit-metrics)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f58c1bd058c97dfe265d/maintainability)](https://codeclimate.com/github/daviddiazvico/scikit-metrics/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f58c1bd058c97dfe265d/test_coverage)](https://codeclimate.com/github/daviddiazvico/scikit-metrics/test_coverage)
-[![Code Health](https://landscape.io/github/daviddiazvico/scikit-metrics/master/landscape.svg?style=flat)](https://landscape.io/github/daviddiazvico/scikit-metrics/master)
 
 ## Installation
 Available in [PyPI](https://pypi.python.org/pypi?:action=display&name=scikit-metrics)
