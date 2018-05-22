@@ -1,0 +1,236 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>skmetrics package &#8212; scikit-metrics 0.1.1 documentation</title>
+    <link rel="stylesheet" href="alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="pygments.css" type="text/css" />
+    <script type="text/javascript" src="documentation_options.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="underscore.js"></script>
+    <script type="text/javascript" src="doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="skmetrics-package">
+<h1>skmetrics package<a class="headerlink" href="#skmetrics-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-skmetrics.classification">
+<span id="skmetrics-classification-module"></span><h2>skmetrics.classification module<a class="headerlink" href="#module-skmetrics.classification" title="Permalink to this headline">¶</a></h2>
+<p>Scikit-learn-compatible metrics for classification problems.</p>
+<p>&#64;author: David Diaz Vico
+&#64;license: MIT</p>
+<dl class="function">
+<dt id="skmetrics.classification.g_score">
+<code class="descclassname">skmetrics.classification.</code><code class="descname">g_score</code><span class="sig-paren">(</span><em>y_true</em>, <em>y_pred</em>, <em>eps=None</em>, <em>sparse=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/skmetrics/classification.html#g_score"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#skmetrics.classification.g_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>G-score</p>
+<p>Calculates the G-score: sqrt(prod(true_rates)).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>y_true</strong> (<em>array-like</em><em>, </em><em>shape =</em><em> [</em><em>n_samples</em><em>]</em>) – Ground truth (correct) target values.</li>
+<li><strong>y_pred</strong> (<em>array-like</em><em>, </em><em>shape =</em><em> [</em><em>n_samples</em><em>]</em>) – Estimated targets as returned by a classifier.</li>
+<li><strong>eps</strong> (<em>None</em><em> or </em><em>float</em><em>, </em><em>optional.</em>) – If a float, that value is added to all values in the contingency
+matrix. This helps to stop NaN propagation. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, nothing is
+adjusted.</li>
+<li><strong>sparse</strong> (<em>boolean</em><em>, </em><em>optional.</em>) – If True, return a sparse CSR continency matrix. If <code class="docutils literal notranslate"><span class="pre">eps</span> <span class="pre">is</span> <span class="pre">not</span>
+<span class="pre">None</span></code>, and <code class="docutils literal notranslate"><span class="pre">sparse</span> <span class="pre">is</span> <span class="pre">True</span></code>, will throw ValueError.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>g</strong> – G-score.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="skmetrics.classification.geometric_roc_auc_score">
+<code class="descclassname">skmetrics.classification.</code><code class="descname">geometric_roc_auc_score</code><span class="sig-paren">(</span><em>y_true</em>, <em>y_score</em>, <em>pos_label=None</em>, <em>sample_weight=None</em>, <em>drop_intermediate=True</em>, <em>reorder=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/skmetrics/classification.html#geometric_roc_auc_score"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#skmetrics.classification.geometric_roc_auc_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multiclass Geometric ROC AUC score</p>
+<p>Calculates the multiclass geometric mean ROC AUC score:
+<a class="reference external" href="http://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html">http://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html</a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>y_true</strong> (<em>array-like</em><em>, </em><em>shape =</em><em> [</em><em>n_samples</em><em>]</em>) – Ground truth (correct) target values.</li>
+<li><strong>y_pred</strong> (<em>array-like</em><em>, </em><em>shape =</em><em> [</em><em>n_samples</em><em>]</em>) – Estimated targets as returned by a classifier.</li>
+<li><strong>pos_label</strong> (<em>int</em><em> or </em><em>str</em><em>, </em><em>default=None</em>) – Label considered as positive and others are considered
+negative.</li>
+<li><strong>sample_weight</strong> (<em>array-like of shape =</em><em> [</em><em>n_samples</em><em>]</em><em>, </em><em>optional</em>) – Sample weights.</li>
+<li><strong>drop_intermediate</strong> (<em>boolean</em><em>, </em><em>optional</em><em> (</em><em>default=True</em><em>)</em>) – Whether to drop some suboptimal thresholds which
+would not appear on a plotted ROC curve. This is
+useful in order to create lighter ROC curves.</li>
+<li><strong>reorder</strong> (<em>boolean</em><em>, </em><em>optional</em><em> (</em><em>default=False</em><em>)</em>) – If True, assume that the curve is ascending in the case of
+ties, as for an ROC curve. If the curve is non-ascending, the
+result will be wrong.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gaur</strong> – Multiclass Geometric ROC AUC score.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="skmetrics.classification.separability_score">
+<code class="descclassname">skmetrics.classification.</code><code class="descname">separability_score</code><span class="sig-paren">(</span><em>y_true</em>, <em>y_pred</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/skmetrics/classification.html#separability_score"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#skmetrics.classification.separability_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Separability score</p>
+<p>Calculates the separability score.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>y_true</strong> (<em>array-like</em><em>, </em><em>shape =</em><em> [</em><em>n_samples</em><em>]</em>) – Ground truth (correct) target values.</li>
+<li><strong>y_pred</strong> (<em>array-like</em><em>, </em><em>shape =</em><em> [</em><em>n_samples</em><em>]</em>) – Projections returned by a transformer.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>s</strong> – Separability score.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-skmetrics.regression">
+<span id="skmetrics-regression-module"></span><h2>skmetrics.regression module<a class="headerlink" href="#module-skmetrics.regression" title="Permalink to this headline">¶</a></h2>
+<p>Scikit-learn-compatible metrics for regression problems.</p>
+<p>&#64;author: David Diaz Vico
+&#64;license: MIT</p>
+<dl class="function">
+<dt id="skmetrics.regression.relative_mean_absolute_error">
+<code class="descclassname">skmetrics.regression.</code><code class="descname">relative_mean_absolute_error</code><span class="sig-paren">(</span><em>y_true</em>, <em>y_pred</em>, <em>sample_weight=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/skmetrics/regression.html#relative_mean_absolute_error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#skmetrics.regression.relative_mean_absolute_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relative mean absolute error</p>
+<p>Calculates the relative mean absolute error:
+100 * abs(y_true - y_pred) / abs(y_true).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>y_true</strong> (<em>array-like</em><em>, </em><em>shape =</em><em> [</em><em>n_samples</em><em>]</em>) – Ground truth (correct) target values.</li>
+<li><strong>y_pred</strong> (<em>array-like</em><em>, </em><em>shape =</em><em> [</em><em>n_samples</em><em>]</em>) – Estimated targets as returned by a classifier.</li>
+<li><strong>sample_weight</strong> (<em>array-like of shape =</em><em> [</em><em>n_samples</em><em>]</em><em>, </em><em>optional</em>) – Sample weights.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>rmae</strong> – Relative mean absolute error.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-skmetrics">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-skmetrics" title="Permalink to this headline">¶</a></h2>
+<p>Scikit-learn-compatible metrics.</p>
+<p>&#64;author: David Diaz Vico
+&#64;license: MIT</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">skmetrics package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-skmetrics.classification">skmetrics.classification module</a></li>
+<li><a class="reference internal" href="#module-skmetrics.regression">skmetrics.regression module</a></li>
+<li><a class="reference internal" href="#module-skmetrics">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_static/skmetrics.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, David Diaz Vico.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/_static/skmetrics.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
